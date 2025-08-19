@@ -1,5 +1,5 @@
 fibonacci_iterative_range <- function(start, end) {
-  if (start < 0 || end < 0 || start > end) {
+  if (start <= 0 || end <= 0 || start > end) {
     stop("Invalid range")
   }
 
