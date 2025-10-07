@@ -138,3 +138,21 @@ pattern = re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*') # Mr/Ms/Mrs [specified by group 
 matches = pattern.finditer(text_to_search) 
 for match in matches:
     print(match)
+    
+pattern = re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*')
+matches = pattern.findall(text_to_search) # prints out the groups of the pattern from the matches (iff groups present) (not as object as in finditer)
+for match in matches:
+    print(match)
+    
+pattern = re.compile(r'\d{3}[.-]\d{3}[.-]\d{4}') 
+matches = pattern.findall(text_to_search) # if no group present --> prints the matches simply (not as object as in finditer)
+for match in matches:
+    print(match)
+    
+pattern = re.compile(r'Start')
+match = pattern.match(sentence) # matches the pattern only at the beginning of the string
+print(match)
+
+pattern = re.compile(r'sentence')
+match = pattern.search(sentence) # searches for the match in the entire string
+print(match)
