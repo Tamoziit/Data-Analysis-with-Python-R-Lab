@@ -23,6 +23,12 @@ Mr Smith
 Ms Davis
 Mrs. Robinson
 Mr. T
+
+cat
+mat
+pat
+bat
+
 '''
 
 sentence = 'Start a sentence and then bring it to an end'
@@ -99,6 +105,36 @@ for match in matches:
     print(match)
     
 pattern = re.compile(r'[89]00[.-]\d{3}[.-]\d{4}') # starts with 800 or 900
+matches = pattern.finditer(text_to_search) 
+for match in matches:
+    print(match)
+    
+pattern = re.compile(r'[1-5]') # matches digits b/w 1 & 5
+matches = pattern.finditer(text_to_search) 
+for match in matches:
+    print(match)
+    
+pattern = re.compile(r'[a-zA-Z]') # matches letters b/w a-z & A-Z (all alphabets)
+matches = pattern.finditer(text_to_search) 
+for match in matches:
+    print(match)
+    
+pattern = re.compile(r'[^a-zA-Z]') # matches everything EXCEPT alphabets
+matches = pattern.finditer(text_to_search) 
+for match in matches:
+    print(match)
+    
+pattern = re.compile(r'[^b]at') # all strings with "at" except bat
+matches = pattern.finditer(text_to_search) 
+for match in matches:
+    print(match)
+    
+pattern = re.compile(r'Mr\.?\s[A-Z]\w*') # Mr (optional .) Uppercase letter, then 0 or more words (eg. Mr. T(0 words after uppercase T))
+matches = pattern.finditer(text_to_search) 
+for match in matches:
+    print(match)
+    
+pattern = re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*') # Mr/Ms/Mrs [specified by group --> ()] (optional .) (space \s) Uppercase letter, then 0 or more words (eg. Mr. T(0 words after uppercase T))
 matches = pattern.finditer(text_to_search) 
 for match in matches:
     print(match)
