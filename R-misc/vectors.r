@@ -53,3 +53,18 @@ z <- c("Ram", "Alex", "Mohan", "Sohan")
 names(z) <- c("n1", "n2", "n3", "n4") # assigning names (codes) to each element of the vector # nolint
 print(z)
 print(z["n1"]) # indexing by name
+
+# vector functions
+print(rep(c(2, 3, 4), time = 4)) # repeating (2, 3, 4) 4 times
+print(rep(c(1, 4, 8), each = 2)) # repeating each element of the vector 2 times
+print(rep(c(0, 8), time = c(3, 4))) # repeat 0 3 times, 8 4 times
+print(rep(1:4, length.out = 8)) # max length = 10
+
+print(seq(from = 3.5, to = 1.5, by = -0.5))
+print(seq(from = -2.7, to = 1.5, length.out = 8)) # auto-adjusts by field
+
+x <- 1:10
+print(any(x > 5)) # checks if any value of x in 1:10 is > 5, if yes returns TRUE
+print(any(x > 15)) # FALSE
+print(all(x > 5)) # checks is all 1:10 is > 5
+print(all(x > 0)) # TRUE
